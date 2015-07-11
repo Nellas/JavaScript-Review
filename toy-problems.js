@@ -8,8 +8,20 @@ plusOneSum([1, 2, 3, 4]); // 14
 
 */
 
+var nums = [1, 2, 3, 4];
 
+function plusOneSum(arr) {
+    var newArr = [];
+    var answer = 0;
+    for (var i = 0; i < arr.length; i++) {
+        newArr.push(arr[i] + 1);
+    }
+    for (var j = 0; j < newArr.length; j++) {
+        answer += newArr[j];
+    } return answer;
 
+}
+console.log('\nAll items in the array added together equal:', plusOneSum(nums));
 /*
 
 Write a function that accepts a multi dimensional array and returns a flattened version.
@@ -18,6 +30,15 @@ flatten([1, 2, [3, [4], 5, 6], 7]) // [1, 2, 3, 4, 5, 6, 7]
 
 */
 
+
+flatten = function(arr) {
+    var newArr = [];
+    for (var i = 0; i < arr.length; i++) {
+       newArr.push(arr[i][0]);
+    } return newArr;
+};
+
+console.log(flatten([1, 2, [3, [4], 5, 6], 7]));
 
 
 /*
