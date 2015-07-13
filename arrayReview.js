@@ -83,7 +83,7 @@ var sentence = "Dev Mountain is the best"
 function longest(string) {
     var str = string.split(" ");
     var longest = 0;
-    var word = null;
+    var word = 0;
     for (var i = 0; i < str.length; i++) {
         if (longest < str[i].length) {
             longest = str[i].length;
