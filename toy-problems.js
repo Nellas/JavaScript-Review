@@ -58,11 +58,15 @@ var valueArray = ['a1', 'a2', 'a3', 'b1', 'b2', 'b3', 'c1', 'c2', 'c3'];
 
 function unsortArr(arr) {
     for (var i = 0; i < arr.length; i++) {
-        arr[i].reverse();
+        arr[i] = arr[i].split('').reverse().join('');
+    }
+    arr = arr.sort();
+    for (var j = 0; j < arr.length; j++) {
+        arr[j] = arr[j].split('').reverse().join('');
     } return arr;
 }
 
-console.log(unsortArr(valueArray));
+console.log('\nThe reshuffled array is: ', unsortArr(valueArray));
 
 /*
 
@@ -109,7 +113,7 @@ function longest(str) {
     } return words;
 }
 
-console.log('\nThe longest word(s) in the sentence is: ', longest("I gave a present to my parents"));
+console.log('\nThe longest word(s) in the sentence is: ', longest("You are just an old antidisestablishmentarian"));
 
 /*
 
@@ -132,7 +136,7 @@ function getLargeSum() {
     } return largeSum;
 }
 
-console.log('\nThe sum of all the multiples of 3 or 5 below 1000 is: ', getLargeSum());
+console.log('\nThe sum of all the multiples of 3 or 5 below 1000 is: ', getLargeSum(), '\n');
 
 /*
 Remove duplicate characters in a given string keeping only the first occurrences. For example, if the input is ‘tree traversal’ the output will be "tre avsl".
@@ -152,7 +156,7 @@ function removeDups(str) {
     return str;
 }
 
-console.log(removeDups('tree traversal'));
+console.log(removeDups('tree traversal\n'));
 
 /*
 Write a sum method which will work properly when invoked using either syntax below.
@@ -166,11 +170,7 @@ function sum(num1, num2) {
     var theSum = 0;
     if (num1 && num2) {
         theSum = num1 + num2;
-    } else {
-        function newFunc(num3) {
-            theSum = num1 + num3;
-        }
     } return theSum;
 }
 
-console.log(sum(2)(3));
+console.log('Sum of (2, 3): ', sum(2,3));
