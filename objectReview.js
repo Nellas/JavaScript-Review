@@ -21,8 +21,8 @@ favoriteThings.book = 'Harry Potter';
 
 
 //Now, alert your favorite person, then alert your favorite book.
-
-console.log('\n',favoriteThings.person, '\n',favoriteThings.book);
+console.log('\n');
+console.log('Favorite Person: ', favoriteThings.person, '\nFavorite Book: ', favoriteThings.book);
 
 
 
@@ -71,11 +71,11 @@ var methodCollection = {};
 //Now add two methods (functions that are properties on objects) to your methodCollection object. One called 'alertHello' which alerts 'hello' and another method called logHello which logs 'hello' to the console. 
 
 methodCollection.alertHello = function() {
-    console.log('\nCannot alert in WebStorm, so.... hello!');
+    console.log('\nAlerting Hello!');
 };
 
 methodCollection.logHello = function() {
-    console.log('Hello');
+    console.log('Logging Hello');
 };
 
 

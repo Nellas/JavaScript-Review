@@ -42,7 +42,7 @@ function contains(str, arr, cb) {
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 contains('Colt', names, function(yes){
   if(yes){
-    console.log('\nColt is in the array');
+    console.log('\nColt is in the array\n');
   } else {
     console.log('Colt is not in the list');
   }
@@ -142,7 +142,7 @@ var users = [
   },
 ];
 getUserById('16t', users, function(user){
-  console.log('\nThe user with the id 16t has the email of ' + user.email + 'the name of ' + user.name + ' and the address of ' + user.address);
+  console.log('\nThe user with the id 16t has the email of ' + user.email + 'the name of ' + user.name + ' and the address of ' + user.address, '\n');
 });
 
 
@@ -161,6 +161,6 @@ function find(arr, cb) {
 
 //Looks through each value in the list, returning the first one that passes a truth test 
 var numbers  = [1, 2, 3, 4, 5, 6];
-console.log('\n', find(numbers, function(num){
+console.log(find(numbers, function(num){
   return num % 2 == 0; //should return 2
 }));
