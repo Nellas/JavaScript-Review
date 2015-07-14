@@ -66,7 +66,7 @@ function unsortArr(arr) {
     } return arr;
 }
 
-console.log('\nThe reshuffled array is: ', unsortArr(valueArray));
+console.log('\nThe reshuffled array is: ', unsortArr(valueArray), '\n');
 
 /*
 
@@ -74,7 +74,18 @@ There is an array of non-negative integers. A second array is formed by shufflin
 
 */
 
+var nonNegativeOne = [12, 15, 96, 45, 67, 54];
+var nonNegativeTwo = [96, 15, 45, 54, 67];
 
+function findMissing (arr1, arr2) {
+    for (var i = 0; i < arr1.length; i++) {
+        if (arr1[i] !== arr2.indexOf) {
+            return arr1[i];
+        }
+    }
+}
+
+console.log('The missing integer is: ', findMissing(nonNegativeOne, nonNegativeTwo));
 
 
 
@@ -91,29 +102,32 @@ longestWords("Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo") 
 */
 function longest(str) {
     var string = str.split(' ');
-    var leng = 0;
+    var size = 0;
     var words = [];
     for (var i = 0; i < string.length; i++) {
-        if (leng < string[i].length) {
-            leng = string[i].length;
-            words = [string[i]];
-        }
-    }
-    for (var h = 0; h < string.length; h ++) {
-        if (string[h] === leng) {
-            words.push(string[h]);
+        if (size < string[i].length) {
+            size = string[i].length;
+            words = [string[i].toLowerCase()];
+        } else if (string[i].length === size) {
+            if (words.indexOf(string[i] === -1)) {
+                words.push(string[i].toLowerCase());
+            }
         }
     }
     for (var j = words.length - 1; j >= 0; j--) {
         for (var k = j - 1; k >= 0; k--) {
-            if (words[j].toLowerCase() === words[k].toLowerCase()) {
-                words.slice(j, 1);
+            if (words[k] === words[j]) {
+                words.splice(k, 1);
             }
+
         }
-    } return words;
+    }
+    return words;
 }
 
-console.log('\nThe longest word(s) in the sentence is: ', longest("You are just an old antidisestablishmentarian"));
+console.log('\nThe longest word(s) in the string "You are just an old antidisestablishmentarian": ', longest('You are just an old antidisestablishmentarian'));
+console.log('The longest word(s) in the string "I gave a present to my parents": ', longest('I gave a present to my parents'));
+console.log('The longest word(s) in the string "Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo": ', longest('Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo'));
 
 /*
 
@@ -156,7 +170,7 @@ function removeDups(str) {
     return str;
 }
 
-console.log(removeDups('tree traversal\n'));
+console.log('"tree traversal" with all duplicate characters removed is: ', removeDups('tree traversal\n'));
 
 /*
 Write a sum method which will work properly when invoked using either syntax below.
@@ -166,11 +180,16 @@ console.log(sum(2)(3));  // Outputs 5
 
 */
 
-function sum(num1, num2) {
-    var theSum = 0;
-    if (num1 && num2) {
-        theSum = num1 + num2;
-    } return theSum;
-}
+var sum = function(num1, num2) {
+    if (num2) {
+        return num1 + num2;
+    } else {
+        return function(num2) {
+        return num1 + num2;
+
+        }
+    }
+};
 
 console.log('Sum of (2, 3): ', sum(2,3));
+console.log('Sum of (2)(3): ', sum(2)(3));

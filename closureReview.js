@@ -21,10 +21,14 @@ Once completed, add a second arguments that allows the function to be executed N
 
 */
 
-var firstFunction = function(paramFunction) {
+var firstFunction = function(paramFunction, N) {
     return function newFunction() {
-        return paramFunction();
+        for (var i = 0; i < N; i++) {
+             paramFunction();
+
+        }
+        console.log('STAHHP!');
     }
 };
 
-console.log(firstFunction(function(){return 'Only executed once'})());
+firstFunction(function(){console.log('N = 4.  Code will execute four times.');}, 4)();
