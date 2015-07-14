@@ -23,7 +23,7 @@ function removeOdds(array) {
     } return array;
 }
 
-console.log('\nThe array with all odd nunbers removed is', removeOdds(evenArray));
+console.log('\nThe array with all odd numbers removed is', removeOdds(evenArray));
 
 
 
